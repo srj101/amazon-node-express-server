@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 const cors = require("cors");
 const stripe = require("stripe")(
   "sk_test_51JS9p5BFqjkt7bdnoFgtROrprhrLTmNd2WYexjAcZpIQe7OhQ1wwBcnnrDpMGyPiC9Sbv5bdCoEzmociafJDwdr800HAHh5qkq"
@@ -31,5 +31,5 @@ app.post("/payments/create", async (request, response) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`app listening `);
 });
